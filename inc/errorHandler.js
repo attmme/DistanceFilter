@@ -6,7 +6,7 @@ class ErrorHandler {
         try {
             return (
                 this.isNumber([positionA.latitude, positionB.latitude,
-                positionB.longitude, positionB.longitude
+                    positionB.longitude, positionB.longitude
                 ]) &&
                 this.isObject([positionA, positionB])
             );
@@ -29,8 +29,7 @@ class ErrorHandler {
         // Customer must contain 4 different elements
         try {
             return (Object.keys(customer).length == 4);
-        }
-        catch {
+        } catch {
             return false;
         }
     }
@@ -40,7 +39,7 @@ class ErrorHandler {
             return (
                 this.isObject([filteredCustomers]) &&
                 Object.keys(filteredCustomers).length >= 1 &&
-                this.isNumber([filteredCustomers[0].user_id])
+                this.isNumberObj(filteredCustomers, "user_id") // CANVIAR, nomes esta revisant el 1r
             );
         } catch {
             return false;
@@ -53,12 +52,12 @@ class ErrorHandler {
             inputCustomers.map((el) => {
 
                 if (!(
-                    this.isObject([el]) &&
-                    this.isNumber([el.user_id]) &&
-                    this.isString([el.name]) &&
-                    this.isNumber([el.latitude]) &&
-                    this.isNumber([el.longitude])
-                )) {
+                        this.isObject([el]) &&
+                        this.isNumber([el.user_id]) &&
+                        this.isString([el.name]) &&
+                        this.isNumber([el.latitude]) &&
+                        this.isNumber([el.longitude])
+                    )) {
                     isCorrect = false;
                 }
             });
@@ -80,7 +79,19 @@ class ErrorHandler {
         } catch {
             return false;
         }
+    }
 
+    isNumberObj(input, obj) {
+        try {
+            input.map(el => {
+                if (!this.isNumber([el[obj]])) {
+                    throw false;
+                }
+            });
+            return true;
+        } catch {
+            return false;
+        }
     }
 
     isString(input) {

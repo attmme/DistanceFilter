@@ -40,7 +40,7 @@ Here is a short guide to install everything on debian and windows.
     > node -v
     ```
 
-3. To to install jest, we will move into the main folder and type the next code in the terminal.
+3. To to install jest, we will move into the main folder and type the next code in the console.
     ```
     > npm install
     ```
@@ -49,7 +49,7 @@ Here is a short guide to install everything on debian and windows.
 ## Running main program
 
 For linux and windows, those steps are exactly the same. <br/><br/>
-To execute the program, we will move into the main folder and type the next code in the terminal.
+To execute the program, we will move into the main folder and type the next code in the terminal / console.
 
     $ node main.js
 
@@ -61,11 +61,11 @@ If everything went well, we will see the following message.
 
 ## Running tests
 
-To run all tests localted in 'tests' folder, we will stay in the main folder and type the next code in the terminal.
+To run all tests localted in 'tests' folder, we will stay in the main folder and type the next code in the terminal / console.
     
     $ npm test
     
-If everything went correctly, we will see the following message.
+If everything went well, we will see the following message.
 
     PASS  tests/customers.test.js
     PASS  tests/harvesine.test.js

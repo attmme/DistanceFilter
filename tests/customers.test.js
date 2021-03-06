@@ -98,8 +98,8 @@ test('Expected output to be error when having wrong \'validCustomers\' format', 
   expect.assertions(1);
 
   return customers.filterCustomers([{
-    "user_id": 5
-  }])
+      "user_id": 5
+    }])
     .catch(e => {
       expect(e).toStrictEqual("Error filtering customers. No valid customers found within 100km.");
     });
@@ -109,11 +109,11 @@ test('Expected output to be error when having wrong \'user_id\' data type', () =
   expect.assertions(1);
 
   return customers.filterCustomers([{
-    user_id: 1,
-    name: 'Oscar G',
-    latitude: 53.1489345,
-    longitude: -7.2875,
-  }])
+      user_id: 1,
+      name: 'Oscar G',
+      latitude: 53.1489345,
+      longitude: -7.2875,
+    }])
     .catch(e => {
       expect(e).toBe("Error filtering customers. No valid customers found within 100km.");
     });
@@ -168,7 +168,11 @@ test('Expected output to be sorted', () => {
 });
 
 test('Expected output to be error when having wrong \'inputCustomers id\' data type', () => {
+  expect.assertions(1);
+
   return customers.sortCustomers([{
+      "user_id": 5
+    }, {
       "user_id": 'a'
     }])
     .catch(e => {

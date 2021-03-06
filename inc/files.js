@@ -26,11 +26,10 @@ class Files {
     parseJSON(inputString) {
         try {
             return inputString.split('\n').map((customer) => {
-                    if (customer.length > 0) {
-                        return JSON.parse(customer)
-                    }
+                if (customer.length > 0) {
+                    return JSON.parse(customer)
                 }
-            );
+            });
         } catch {
             throw ("Error parsing file");
         }
